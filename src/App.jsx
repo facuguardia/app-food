@@ -1,13 +1,12 @@
-
+import React from "react"
+import Landing from "./Components/Landing/Landing.jsx"
 
 function App() {
-
-
   return (
-    <div className="bg-img-background w-full h-screen bg-no-repeat bg-center bg-black">
-      <h1 className="text-center pt-20 text-3xl text-blue-300">Bienvenidos Devs a...</h1>
+    <div className="w-screen h-screen">
+      <Landing/>
     </div>
-  )
+  );
 }
 
 export default App
