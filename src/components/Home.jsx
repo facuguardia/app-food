@@ -30,44 +30,15 @@ import SideBar from "./SideBar";
 
 function Home(){
    return (
-    <div>
-        
-        <div className="flex justify-end">
-         <div className="flex-grow">
+    <div className="h-screen w-screen">
+         <div className="flex justify-end">
         <SideBar />
+        <br />
+        <br />
         </div>
-        <button className="text-xl mt-4 mr-4 hover:text-red-400 hover:border-b-2  hover:border-red-500 "> <BsCartDash/> </button>
-        </div>
-        
-         <h1 className="ml-5 mt-5 font-bold text-left text-lg"> COMIDA DELICIOSA <br/> PARA VOS... </h1>
+        <h1 className="ml-5 mt-5 font-bold text-left text-lg"> COMIDA DELICIOSA <br/> PARA VOS... </h1>
         
          <Categorias /> 
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
-         <br/>
          <MenuInferior />
        
     </div>
