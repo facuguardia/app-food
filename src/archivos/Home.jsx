@@ -1,5 +1,4 @@
 import React from "react";
-import {BsCartDash} from 'react-icons/bs';
 import MenuInferior from "./MenuInferior";
 import Categorias from "./Categorias";
 import SideBar from "./SideBar";
@@ -30,19 +29,14 @@ import SideBar from "./SideBar";
 
 function Home(){
    return (
-    <div className="h-screen w-screen">
-         <div className="flex justify-end">
+    <div className="bg-[#24282E] h-screen w-screen"> 
         <SideBar />
         <br />
         <br />
-        </div>
-        <h1 className="ml-5 mt-5 font-bold text-left text-lg"> COMIDA DELICIOSA <br/> PARA VOS... </h1>
-        
+        <h1 className="ml-5 mt-5 font-bold text-center text-lg text-[#E58326]"> COMIDA DELICIOSA <br/> PARA VOS... </h1>
          <Categorias /> 
          <MenuInferior />
-       
     </div>
-
    )
 }
 export default Home;
