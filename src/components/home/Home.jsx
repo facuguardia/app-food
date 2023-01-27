@@ -36,12 +36,42 @@ function Home() {
     <div className="h-screen w-screen">
       <div className="flex justify-end">
         <SideBar />
+      
       </div>
-      <h1 className="ml-5 mt-5 font-bold text-left text-lg">
+      <h1 className="ml-5 mt-5 font-bold text-left text-lg text-secondary">
         {" "}
         COMIDA DELICIOSA <br /> PARA VOS... {user.displayName || user.email}
       </h1>
       <Categorias />
+      <br />
+       <br /> 
+       <br /> 
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       <br />
+       
+      
+       
       <MenuInferior />
     </div>
   );
