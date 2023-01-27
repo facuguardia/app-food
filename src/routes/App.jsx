@@ -6,26 +6,28 @@ import Home from "../components/home/Home";
 import Login from "../components/login/Login";
 import ProtectedRoute from "../components/login/ProtectedRoute";
 import Register from "../components/login/Register";
+import Landing from "../Components/Landing/Landing";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
 
 function App() {
   return (
-    <div  className="bg-background h-screen text-gray-300 flex">
+    <div  className="bg-background h-screen w-screen text-gray-300 flex">
       <AuthProvider>
         <Routes>
-          {/* <Route path="/" element={<Landing />} /> */}
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
-            path="/"
+            path="/home"
             element={
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          
         </Routes>
       </AuthProvider>
     </div>
