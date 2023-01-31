@@ -30,7 +30,7 @@ function Register() {
     setError("");
     try {
       await signup(user.email, user.password);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
     }

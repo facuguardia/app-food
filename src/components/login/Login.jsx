@@ -30,7 +30,7 @@ function Login() {
       return setError("Por favor ingrese su correo y contraseña");
     try {
       await login(user.email, user.password);
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
     }
@@ -40,7 +40,7 @@ function Login() {
   const handleGoogleSignin = async () => {
     try {
       await loginGoogle();
-      navigate("/");
+      navigate("/home");
     } catch (error) {
       setError(error.message);
     }
