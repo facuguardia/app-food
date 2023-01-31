@@ -1,8 +1,11 @@
 import React from "react";
-import MenuInferior from "./MenuInferior";
+// Components
 import Categorias from "./Categorias";
-import SideBar from "./SideBar";
+import Sidebar from "./Sidebar";
+// Auth
 import { useAuth } from "../../context/AuthContext";
+
+
 // import Buscador
 // import Cards
 
@@ -35,44 +38,13 @@ function Home() {
   return (
     <div className="h-screen w-screen">
       <div className="flex justify-end">
-        <SideBar />
-      
+        <Sidebar />
       </div>
       <h1 className="ml-5 mt-5 font-bold text-left text-lg text-secondary">
         {" "}
         COMIDA DELICIOSA <br /> PARA VOS... {user.displayName || user.email}
       </h1>
       <Categorias />
-      <br />
-       <br /> 
-       <br /> 
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       <br />
-       
-      
-       
-      <MenuInferior />
     </div>
   );
 }
