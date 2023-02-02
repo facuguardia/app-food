@@ -2,10 +2,6 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-     fontFamily: {
-      'lato' : ['Lato'],
-      'muli' : ['Mulish']
-     },
     extend: {
       colors: {
         background: "#1F1D28",
@@ -19,8 +15,8 @@ module.exports = {
         "url('/src/assets/pngegg.png')"
       },
       spacing: {
-        '90%':'90%',
-        '89%':'89.5%',
+        '90%':'65%',
+        '89%':'64.9%',
       }
     },
     plugins: [],
