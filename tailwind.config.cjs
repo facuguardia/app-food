@@ -2,6 +2,10 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+     fontFamily: {
+      'lato' : ['Lato'],
+      'muli' : ['Mulish']
+     },
     extend: {
       colors: {
         background: "#1F1D28",
