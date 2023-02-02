@@ -2,11 +2,12 @@ import React from "react";
 // Components
 import Categorias from "./Categorias";
 import Sidebar from "./Sidebar";
-// Auth
+import Search from "./Search/Search";
+ // Auth
 import { useAuth } from "../../context/AuthContext";
 
 
-// import Buscador
+
 // import Cards
 
 // const [home, setHome] = React.useState({
@@ -36,14 +37,14 @@ function Home() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="h-screen w-screen">
-      <div className="flex justify-end">
-        <Sidebar />
-      </div>
-      <h1 className="ml-5 mt-5 font-bold text-left text-lg text-secondary">
+    <div className="h-screen w-screen pt-3">
+      
+      <Sidebar />
+      <h1 className="mt-3 font-muli font-extrabold text-center text-2xl text-secondary">
         {" "}
-        COMIDA DELICIOSA <br /> PARA VOS... {user.displayName || user.email}
+        ¿Que quieres comer hoy? <br />  {user.displayName || user.email}
       </h1>
+      <Search />
       <Categorias />
     </div>
   );
