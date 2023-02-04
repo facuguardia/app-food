@@ -45,9 +45,9 @@ tendria un funcion que compara el value del imput con la categoria (con el iclud
 
 
     return(
-         <div className="flex justify-center items-center"> {/* <label className="p-3 text-lg flex">Buscador:</label> */}
-            <div className="text-2xl mt-3 text-white"><BsSearch/></div>
-            <input className="items-center rounded-xl py-2 mt-3 pr-3 text-white text-lg bg-primary" value={search.valor} onChange={handleSearch} placeholder="  ¿Que estas buscando?"></input>
+         <div className="flex justify-center mr-5 mt-1"> {/* <label className="p-3 text-lg flex">Buscador:</label> */}
+            <button className="text-2xl mt-3 text-white relative left-8 "><BsSearch/></button>
+            <input className="items-center rounded-2xl py-2 pl-10 pr-1 mt-3  text-white text-lg bg-primary" value={search.valor} onChange={handleSearch} placeholder="¿Que estas buscando?"></input>
             {/* <h1>{search.valor}</h1> */}
         </div>
     )
