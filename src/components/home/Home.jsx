@@ -8,6 +8,7 @@ import {BsCartDash} from "react-icons/bs"
 import { useAuth } from "../../context/AuthContext";
 //  plantilla card
 import { food } from "../../data";
+import Cards from "./Cards/Cards";
 
 
 
@@ -50,7 +51,7 @@ function Home() {
       </h1>
       <Search />
       <Categorias />
-      
+      <Cards food={food} addToBuy={''} />
     </div>
   );
 }
