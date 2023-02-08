@@ -51,7 +51,7 @@ function Home() {
       </h1>
       <Search />
       <Categorias />
-      <Cards food={food} addToBuy={''} />
+      <Cards food={food} addToBuy={''}/>
     </div>
   );
 }
