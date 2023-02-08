@@ -6,6 +6,8 @@ import Search from "./Search/Search";
 import {BsCartDash} from "react-icons/bs"
  // Auth
 import { useAuth } from "../../context/AuthContext";
+//  plantilla card
+import { food } from "../../data";
 
 
 
