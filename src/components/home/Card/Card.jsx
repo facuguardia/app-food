@@ -1,15 +1,24 @@
-export default function Card({name, image, price, stock, description, addToBuy, id}){
-    return(
-        <div className=" rounded-2xl text-center bg-violet-800 flex flex-col items-center justify-center m-0 w-56 h-56 " >
+export default function Card({
+  name,
+  image,
+  price,
+  stock,
+  description,
+  addToBuy,
+  id,
+}) {
+  return (
+    <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
+      <img
+        className="w-40 object-cover -mt-20 shadow-2xl "
+        src={image}
+        alt={name}
+        onClick={addToBuy}
+      />
 
-              <img className=" relative bottom-[50px] w-40  " src={image} alt={name} onClick={addToBuy} />
-
-            <div className=" font-semibold relative bottom-7">
-                <h2>{name}</h2>
-                <h3 className="text-gray-900/50 text-sm">{price}</h3>
-                <h3 className="text-gray-900/50">{description}</h3>
-                <h4>{stock}</h4>
-            </div>
-        </div>
-    )
+      <h1 className="text-lg font-medium text-white">{name}</h1>
+      <h3 className="text-xl font-semibold text-secondary">{price}</h3>
+      <p className="text-sm">{description}</p>
+    </div>
+  );
 }
