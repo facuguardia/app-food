@@ -64,12 +64,12 @@ function Login() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-primary shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-black text-sm font-fold mb-2"
+            className="block text-gray-300 text-sm font-fold mb-2"
           >
             Usuario
           </label>
@@ -85,7 +85,7 @@ function Login() {
         <div className="mb-4">
           <label
             htmlFor="password"
-            className="block text-black text-sm font-fold mb-2"
+            className="block text-gray-300 text-sm font-fold mb-2"
           >
             Contraseña
           </label>
@@ -99,13 +99,13 @@ function Login() {
           />
         </div>
         <div className="flex items-center justify-between">
-          <button className="bg-secondary hover:bg-secondary/50 text-black font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Ingresar
           </button>
 
           <a
             href="#!"
-            className="inline-block ml-12 align-baseline font-semibold text-sm text-blue-700 hover:text-blue-400"
+            className="inline-block ml-12 align-baseline font-semibold text-sm text-blue-500 hover:text-blue-300"
             onClick={handleResetPassword}
           >
             Has olvidado tu contraseña ?
@@ -119,7 +119,7 @@ function Login() {
 
       <button
         onClick={handleGoogleSignin}
-        className="bg-secondary hover:bg-secondary/50 text-black font-semibold shadow-md rounded border-2 border-gray-300 py-2 px-4 w-full"
+        className="bg-secondary hover:bg-secondary/50 text-gray-700 font-semibold shadow-md rounded py-2 px-4 w-full"
       >
         Google
       </button>

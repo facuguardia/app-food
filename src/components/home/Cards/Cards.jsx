@@ -3,11 +3,11 @@ import Card from "../Card/Card"
 export default function Cards({food, addToBuy}){
 
     return(
-        <div className="flex mt-14 flex-col items-center justify-center gap-14 mb-14 " >
+        <div className="p-8 grid grid-cols-1 gap-16 mt-10" >
             {
                 food.map(({image, name, price, stock, addToBuy, description, id }) => {
                     return(
-                        <Card 
+                        <Card
                         key = {id}
                         image = {image}
                         name = {name}

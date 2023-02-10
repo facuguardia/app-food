@@ -42,12 +42,12 @@ function Register() {
 
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className=" bg-primary shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
         <div className="mb-4">
           <label
             htmlFor="email"
-            className="block text-black text-sm font-fold mb-2"
+            className="block text-gray-300 text-sm font-fold mb-2"
           >
             Usuario
           </label>
@@ -62,7 +62,7 @@ function Register() {
         <div className="mb-4">
           <label
             htmlFor="password"
-            className="block text-black text-sm font-fold mb-2"
+            className="block text-gray-300 text-sm font-fold mb-2"
           >
             Contraseña
           </label>
@@ -75,7 +75,7 @@ function Register() {
             onChange={handleChange}
           />
         </div>
-        <button className="bg-secondary hover:bg-secondary/50 text-black font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Registrate
         </button>
       </form>
