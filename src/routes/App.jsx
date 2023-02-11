@@ -10,10 +10,12 @@ import LandingPage from "../components/LandingPage";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
+import { CartProvider } from "../context/CartContext";
 
 function App() {
   return (
     <div className="bg-gradient-to-b  from-background to-[#24282E] h-screen w-screen text-gray-300 flex">
+    <CartProvider>
       <AuthProvider>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -30,6 +32,7 @@ function App() {
           />
         </Routes>
       </AuthProvider>
+    </CartProvider>
     </div>
   );
 }
