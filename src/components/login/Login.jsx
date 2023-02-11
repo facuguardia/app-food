@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
-// Context
-import { useAuth } from "../../context/AuthContext";
-// Components
+// Iconos
+import { FcGoogle } from "react-icons/fc";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
+// Componentes
 import Alert from "./Alert";
+// Contexto
+import { useAuth } from "../../context/AuthContext";
 
 function Login() {
   const [user, setUser] = useState({
@@ -59,13 +61,15 @@ function Login() {
     }
   };
   return (
+    // Contenedor principal
     <div className=" w-full max-w-xs m-auto">
       {error && <Alert message={error} />}
-
+      {/* Formulario de inicio de secion */}
       <form
         onSubmit={handleSubmit}
         className="bg-primary shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
+        {/* Usuario */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -81,7 +85,7 @@ function Login() {
             onChange={handleChange}
           />
         </div>
-
+        {/* Contraseña */}
         <div className="mb-4">
           <label
             htmlFor="password"
@@ -98,11 +102,12 @@ function Login() {
             onChange={handleChange}
           />
         </div>
+        {/* Botones de inicio de sesión */}
         <div className="flex items-center justify-between">
           <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Ingresar
           </button>
-
+          {/* Enlace para restablecer contraseña */}
           <a
             href="#!"
             className="inline-block ml-12 align-baseline font-semibold text-sm text-blue-500 hover:text-blue-300"
@@ -112,17 +117,19 @@ function Login() {
           </a>
         </div>
       </form>
-
+      {/* Ruta a registro */}
       <p className="my-4 text-sm flex justify-between px-3">
         No estás registrado ?<Link to="/register">Registrate</Link>
       </p>
-
-      <button
-        onClick={handleGoogleSignin}
-        className="bg-secondary hover:bg-secondary/50 text-gray-700 font-semibold shadow-md rounded py-2 px-4 w-full"
-      >
-        Google
-      </button>
+      {/* Botones de redes sociales */}
+      <div className="flex justify-end items-center gap-4 pt-5 pr-3">
+        <button onClick={handleGoogleSignin} className="">
+          <FaGoogle className="text-3xl shadow-md" />
+        </button>
+        <button onClick={handleGoogleSignin} className="">
+          <FaFacebook className="text-3xl shadow-md" />
+        </button>
+      </div>
     </div>
   );
 }
