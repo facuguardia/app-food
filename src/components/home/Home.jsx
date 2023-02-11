@@ -5,11 +5,11 @@ import Search from "./Search/Search";
 import Cards from "./Cards/Cards";
 import Footer from "../Footer";
 // Icon
-import { BsCartDash } from "react-icons/bs";
+import { BsCart3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalOffer, MdOutlineFavoriteBorder } from "react-icons/md";
 import { RxExit } from "react-icons/rx";
-import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
+import { RiHome3Line } from "react-icons/ri";
 // Plantilla card
 import { food } from "../../data";
 import { useState } from "react";
@@ -52,24 +52,31 @@ import { useState } from "react";
 // }
 
 function Home() {
+
   const [menu, setMenu] = useState(false);
+
   return (
     <>
       {/* Container Sidebar */}
       <div
+        onClick={() => setMenu(!menu)}
         className={`bg-secondary h-full fixed w-[20%] flex flex-col justify-between items-center p-5 pt-16 rounded-tr-3xl z-50 transition-all duration-300 ${
-          menu ? "left-0" : "-left-full"
+          menu ? "left-0" : "-left-16"
         }`}
       >
         {/* Menu Sidebar */}
         <nav className="flex flex-col items-center gap-10 text-gray-300 text-4xl">
           {/* Item */}
           <Link href="#">
+            <RiHome3Line />
+          </Link>
+          {/* Item */}
+          <Link href="#">
             <CgProfile />
           </Link>
           {/* Item */}
           <Link href="#">
-            <BsCartDash />
+            <BsCart3 />
           </Link>
           {/* Item */}
           <Link href="#">
@@ -87,17 +94,12 @@ function Home() {
           </Link>
         </div>
         {/* Button Mobile */}
-        <button
-          onClick={() => setMenu(!menu)}
-          className="fixed right-4 bottom-4 text-xl bg-black/30 p-2.5 rounded-full text-white z-50"
-        >
-          {menu ? <RiCloseFill /> : <RiMenu3Fill />}
+        <button className="fixed right-4 bottom-4 text-3xl bg-black/20 p-3 rounded-full text-white z-50">
+          <BsCart3 />
         </button>
       </div>
       {/* Container Home */}
-      <div
-        className={`bg-gradient-to-b  from-background to-[#24282E]  min-h-screen overflow-y-auto`}
-      >
+      <div className="bg-gradient-to-b  from-background to-[#24282E]  min-h-screen overflow-y-auto p-5 pt-6">
         <Search />
 
         <Categorias />
