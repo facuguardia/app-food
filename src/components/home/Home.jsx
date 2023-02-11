@@ -82,9 +82,9 @@ function Home() {
             <CgProfile />
           </Link>
           {/* Item */}
-          <Link href="#">
-            <BsCart3 /><span className="absolute pl-1 pr-1 pb-1 pt-1 rounded-full text-xl text-white font-semibold top-[200px] right-1">{quantity}</span>
-          </Link>
+          {/* <Link href="#">
+            <BsCart3 />{quantity > 0 ?  <span className="absolute w-6 h-6 flex justify-center items-center bg-red-600 rounded-full text-xl text-gray-300 font-semibold top-[200px] right-2.5">{quantity}</span> : null}
+          </Link> */}
           {/* Item */}
           <Link href="#">
             <MdOutlineLocalOffer />
@@ -103,7 +103,7 @@ function Home() {
         {/* Button Mobile */}
       </div>
         <Link href ="#" className="fixed right-3 bottom-4 text-3xl bg-black/20 p-3 rounded-full text-white z-50">
-          <BsCart3 /><span className="absolute pl-1 pr-1 pb-1 pt-1 rounded-full text-xl text-white font-semibold bottom-9 right-1">{quantity}</span>
+          <BsCart3 /> {quantity > 0 ?  <span className="absolute w-6 h-6 flex justify-center items-center bg-gray-400 rounded-full text-xl text-black font-semibold bottom-9 right-0.5">{quantity}</span> : null}
         </Link>
       {/* Container Home */}
       <div className="bg-gradient-to-b  from-background to-[#24282E] w-screen min-h-screen overflow-y-auto pt-4" onClick={() => setMenu(false)}>
@@ -111,7 +111,7 @@ function Home() {
 
         <Categorias />
 
-        <Cards food={food} addToBuy={""} />
+        <Cards food={food}  />
 
         <Footer />
       </div>
