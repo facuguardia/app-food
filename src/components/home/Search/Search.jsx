@@ -46,7 +46,7 @@ tendria un funcion que compara el value del imput con la categoria (con el iclud
         <BsSearch />
       </button>
       <input
-        className="bg-primary items-center rounded-2xl py-2 pl-10 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+        className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-10 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
         value={search.valor}
         onChange={handleSearch}
       ></input>

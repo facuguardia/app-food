@@ -3,16 +3,16 @@ import { Link } from "react-router-dom";
 import Categorias from "./Categorias";
 import Search from "./Search/Search";
 import Cards from "./Cards/Cards";
+import Footer from "../Footer";
 // Icon
 import { BsCartDash } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
-import {
-  MdOutlineLocalOffer,
-  MdOutlineFavoriteBorder,
-} from "react-icons/md";
+import { MdOutlineLocalOffer, MdOutlineFavoriteBorder } from "react-icons/md";
 import { RxExit } from "react-icons/rx";
+import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
 // Plantilla card
 import { food } from "../../data";
+import { useState } from "react";
 // Auth
 // import { useAuth } from "../../context/AuthContext";
 
@@ -52,10 +52,15 @@ import { food } from "../../data";
 // }
 
 function Home() {
+  const [menu, setMenu] = useState(false);
   return (
     <>
       {/* Container Sidebar */}
-      <div className="flex flex-col justify-between items-center bg-secondary w-16 h-screen p-5 pt-16 rounded-r-2xl transition-all duration-300">
+      <div
+        className={`bg-secondary h-full fixed w-[20%] flex flex-col justify-between items-center p-5 pt-16 rounded-tr-3xl z-50 transition-all duration-300 ${
+          menu ? "left-0" : "-left-full"
+        }`}
+      >
         {/* Menu Sidebar */}
         <nav className="flex flex-col items-center gap-10 text-gray-300 text-4xl">
           {/* Item */}
@@ -81,6 +86,13 @@ function Home() {
             <RxExit />
           </Link>
         </div>
+        {/* Button Mobile */}
+        <button
+          onClick={() => setMenu(!menu)}
+          className="fixed right-4 bottom-4 text-xl bg-black/30 p-2.5 rounded-full text-white z-50"
+        >
+          {menu ? <RiCloseFill /> : <RiMenu3Fill />}
+        </button>
       </div>
       {/* Container Home */}
       <div
@@ -91,6 +103,8 @@ function Home() {
         <Categorias />
 
         <Cards food={food} addToBuy={""} />
+
+        <Footer />
       </div>
     </>
   );
