@@ -1,6 +1,6 @@
-import simple from "./assets/hamburguesa_simple.png";
-import doble from "./assets/hamburguesa_doble.png";
-import cheddarybacon from "./assets/hamburguesa_cheddar.png";
+import simple from "./assets/burger-simple.png";
+import doble from "./assets/burger-doble.png";
+import cheddarybacon from "./assets/burger-barbacoa.png";
 
 export const food = [
   {

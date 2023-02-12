@@ -14,7 +14,7 @@ import { CartProvider } from "../context/CartContext";
 
 function App() {
   return (
-    <div className="bg-gradient-to-b  from-background to-[#24282E] h-screen w-screen text-gray-300 flex">
+    <div className="bg-img-background bg-center bg-cover h-screen w-full text-gray-300 flex">
     <CartProvider>
       <AuthProvider>
         <Routes>

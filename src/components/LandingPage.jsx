@@ -1,15 +1,15 @@
 import React from "react";
-import imgLanding from "../assets/logo-3.png";
+import imgLanding from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 function Landing() {
   return (
-    <div className=" bg-gradient-to-b from-[#24282E] to-background flex items-center flex-col h-screen w-screen">
-      <img src={imgLanding} alt="a" className="relative top-32 scale-75" />
+    <div className="flex flex-col justify-center items-center gap-16 overflow-hidden">
+      <img src={imgLanding} className="origin-center rotate-12 scale-110  " />
 
-      <button className="bg-secondary shadow-sm shadow-[#15181b] hover:shadow-[#15181b] hover:shadow-lg rounded-xl max-w-md py-4 w-1/2 absolute top-90% hover:top-89% transition-all duration-150 font-bold font-lato text-gray-700 ">
+      <button className="bg-secondary rounded-full py-2 px-8 shadow-md shadow-gray-400 font-bold text-gray-700">
         <Link to="/login">
-          Ingresar
+          <h2 className="text-gray-700 ">Pedilo ya !</h2>
         </Link>
       </button>
     </div>
