@@ -1,10 +1,11 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-// Components
-import Categorias from "./Categorias";
-import Search from "./Search/Search";
-import Cards from "./Cards/Cards";
-import Footer from "../Footer";
-// Icon
+// Componentes
+import Categorias from "../components/Categorias";
+import Search from "../components/Search";
+import Cards from "../container/Cards";
+import Footer from "../components/Footer";
+// Iconos
 import { BsCart3 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalOffer, MdOutlineFavoriteBorder } from "react-icons/md";
@@ -12,9 +13,9 @@ import { RxExit } from "react-icons/rx";
 import { RiHome3Line } from "react-icons/ri";
 import { BiChevronRight } from "react-icons/bi";
 // Plantilla card
-import { food } from "../../data";
-import { useContext, useState } from "react";
-import { CartContext } from "../../context/CartContext";
+import { food } from "../data";
+// Contexto
+import { CartContext } from "../context/CartContext";
 // Auth
 // import { useAuth } from "../../context/AuthContext";
 
@@ -54,8 +55,9 @@ import { CartContext } from "../../context/CartContext";
 // }
 
 function Home() {
+  // Estado del sidebar
   const [menu, setMenu] = useState(false);
-  // contador del carrito
+  // Contador del carrito
   const [cart, setCart] = useContext(CartContext);
   const quantity = cart.reduce((acc, curr) => {
     return acc + curr.quantity;
@@ -70,7 +72,7 @@ function Home() {
       >
         <BiChevronRight />
       </button>
-      {/* Container Sidebar */}
+      {/* Contenedor Sidebar */}
       <div
         className={`bg-secondary h-full fixed w-[20%] flex flex-col justify-between items-center p-5 pt-16 rounded-r-3xl z-50 transition-all duration-300 ${
           menu ? "left-0" : "-left-full"
@@ -101,7 +103,7 @@ function Home() {
             <RxExit />
           </Link>
         </div>
-        {/* Button Mobile */}
+        {/* Boton carrito */}
       </div>
       <Link
         href="#"
@@ -114,7 +116,7 @@ function Home() {
           </span>
         ) : null}
       </Link>
-      {/* Container Home */}
+      {/* Contenedor Home */}
       <div
         className="bg-gradient-to-b  from-background to-[#24282E] w-screen min-h-screen overflow-x-hidden p-2"
         onClick={() => setMenu(false)}

@@ -2,11 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Aca importamos los componentes
-import Home from "../components/home/Home";
-import Login from "../components/login/Login";
-import ProtectedRoute from "../components/login/ProtectedRoute";
-import Register from "../components/login/Register";
-import LandingPage from "../components/LandingPage";
+import Home from "../page/Home";
+import Login from "../page/Login";
+import ProtectedRoute from "../ProtectedRoute";
+import Register from "../page/Register";
+import LandingPage from "../page/LandingPage";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
