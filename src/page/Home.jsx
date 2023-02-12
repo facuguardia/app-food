@@ -81,19 +81,19 @@ function Home() {
         {/* Menu Sidebar */}
         <nav className="flex flex-col items-center gap-10 text-gray-300 text-4xl">
           {/* Item */}
-          <Link href="/home">
+          <Link to="/home">
             <RiHome3Line />
           </Link>
           {/* Item */}
-          <Link href="#">
+          <Link to="#">
             <CgProfile />
           </Link>
           {/* Item */}
-          <Link href="#">
+          <Link to="#">
             <MdOutlineLocalOffer />
           </Link>
           {/* Item */}
-          <Link href="#">
+          <Link to="#">
             <MdOutlineFavoriteBorder />
           </Link>
         </nav>
@@ -106,7 +106,7 @@ function Home() {
         {/* Boton carrito */}
       </div>
       <Link
-        href="#"
+        to="/order"
         className="fixed right-3 bottom-4 text-3xl bg-black/20 p-3 rounded-full text-white z-50"
       >
         <BsCart3 />{" "}
