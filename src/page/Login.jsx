@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // Iconos
-import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 // Componentes
-import Alert from "./Alert";
+import Alert from "../Alert";
 // Contexto
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 function Login() {
   const [user, setUser] = useState({

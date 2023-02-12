@@ -1,27 +1,27 @@
-import simple from "./assets/hamburguesa_simple.png";
-import doble from "./assets/hamburguesa_doble.png";
-import cheddarybacon from "./assets/hamburguesa_cheddar.png";
+import simple from "./assets/burger-simple.png";
+import doble from "./assets/burger-doble.png";
+import cheddarybacon from "./assets/burger-barbacoa.png";
 
 export const food = [
   {
     category: "Hamburguesas",
     name: "Simple",
     image: simple,
-    price: "$ 399",
+    price: "$ 499",
     description: "Carne, queso, lechuga, tomate y cebolla",
   },
   {
     category: "Hamburguesas",
     name: "Doble Carne",
     image: doble,
-    price: "$ 600",
+    price: "$ 699",
     description: "Doble carne, queso, lechuga, tomate y cebolla",
   },
   {
     category: "Hamburguesas",
     name: "Cheddar y Barbacoa",
     image: cheddarybacon,
-    price: "$ 100",
+    price: "$ 999",
     description: "Doble carne, queso cheddar, lechuga, tomate y salsa barbacoa",
   },
 ];

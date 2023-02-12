@@ -9,15 +9,12 @@ module.exports = {
         secondary: "#ec7c6a",
       },
       backgroundImage: {
-        "img-background":
-          "url('/src/assets/Imagen de WhatsApp 2023-01-19 a las 20.37.05.jpg')",
-        "img-1":
-        "url('/src/assets/pngegg.png')"
+        "img-background": "url('/src/assets/bg-landing.jpg')",
       },
       spacing: {
-        '90%':'65%',
-        '89%':'64.9%',
-      }
+        "90%": "65%",
+        "89%": "64.9%",
+      },
     },
     plugins: [],
   },

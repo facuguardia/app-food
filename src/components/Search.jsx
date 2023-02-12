@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// Iconos
 import { BsSearch } from "react-icons/bs";
 
 function Search() {
@@ -41,10 +42,11 @@ tendria un funcion que compara el value del imput con la categoria (con el iclud
   //   }
 
   return (
+    // Contenedor de la barra de busqueda
     <div className="w-full relative mt-2 ml-8">
-      <button className="absolute left-4 top-8 -translate-y-1/2">
-        <BsSearch />
-      </button>
+      {/* Icono de busqueda*/}
+      <BsSearch className="absolute left-4 top-8 -translate-y-1/2" />
+      {/* Input de busqueda */}
       <input
         className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-10 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
         value={search.valor}

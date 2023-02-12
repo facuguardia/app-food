@@ -2,11 +2,11 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Aca importamos los componentes
-import Home from "../components/home/Home";
-import Login from "../components/login/Login";
-import ProtectedRoute from "../components/login/ProtectedRoute";
-import Register from "../components/login/Register";
-import LandingPage from "../components/LandingPage";
+import Home from "../page/Home";
+import Login from "../page/Login";
+import ProtectedRoute from "../ProtectedRoute";
+import Register from "../page/Register";
+import LandingPage from "../page/LandingPage";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
@@ -14,7 +14,7 @@ import { CartProvider } from "../context/CartContext";
 
 function App() {
   return (
-    <div className="bg-gradient-to-b  from-background to-[#24282E] h-screen w-screen text-gray-300 flex">
+    <div className="bg-img-background bg-center bg-cover h-screen w-full text-gray-300 flex">
     <CartProvider>
       <AuthProvider>
         <Routes>

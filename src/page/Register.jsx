@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-
 // Context
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 // Components
-import Alert from "./Alert";
+import Alert from "../Alert";
 
 function Register() {
   const [user, setUser] = useState({
@@ -37,13 +36,15 @@ function Register() {
   };
 
   return (
+    // Contenedor del formulario
     <div className="w-full max-w-xs m-auto">
       {error && <Alert message={error} />}
-
+      {/* Formulario de registro */}
       <form
         onSubmit={handleSubmit}
         className=" bg-primary shadow-md rounded px-8 pt-6 pb-8 mb-4"
       >
+        {/* Usuario */}
         <div className="mb-4">
           <label
             htmlFor="email"
@@ -59,6 +60,7 @@ function Register() {
             onChange={handleChange}
           />
         </div>
+        {/* Contraseña */}
         <div className="mb-4">
           <label
             htmlFor="password"
@@ -75,10 +77,12 @@ function Register() {
             onChange={handleChange}
           />
         </div>
+        {/* Boton de registro */}
         <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
           Registrate
         </button>
       </form>
+      {/* Link para ir al login */}
       <p className="my-4 text-sm flex justify-between px-3">
         Ya tienes una cuenta ?<Link to="/login">Ingresar</Link>
       </p>
