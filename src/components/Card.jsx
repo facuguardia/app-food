@@ -24,7 +24,7 @@ function Card({ name, image, price, description, id }) {
   };
 
   // Restar del carrito
-  const removeCard = (id) => {
+  const removeCard = () => {
     setCart((currCard) => {
       if (currCard.find((card) => card.id === id)?.quantity === 1) {
         return currCard.filter((card) => card.id !== id);
