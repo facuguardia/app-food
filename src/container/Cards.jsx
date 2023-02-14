@@ -1,7 +1,7 @@
 // Componentes
 import Card from "../components/Card";
 
-function Cards({ food, addToBuy }) {
+function Cards({ food}) {
   return (
     // Contenedor de las cards
     <div className="p-8 grid grid-cols-1 gap-16 mt-10">
@@ -15,7 +15,6 @@ function Cards({ food, addToBuy }) {
             name={name}
             price={price}
             stock={stock}
-            addToBuy={() => addToBuy(id)}
             id={id}
             description={description}
           />
