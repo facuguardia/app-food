@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-// icons
+// iconos
 import { CgProfile } from "react-icons/cg";
 import { MdOutlineLocalOffer, MdOutlineFavoriteBorder } from "react-icons/md";
 import { RxExit } from "react-icons/rx";
 import { RiHome3Line } from "react-icons/ri";
 import { BiChevronRight } from "react-icons/bi";
 
-function Sidebar({handleMenu, menu}) {
-    
-   
-return (
+function Sidebar({ handleMenu, menu }) {
+  return (
     <>
       {/* Boton Sidebar */}
       <button
@@ -22,8 +19,8 @@ return (
       </button>
       {/* Contenedor Sidebar */}
       <div
-        className={`bg-secondary h-screen fixed w-[20%] flex flex-col justify-between items-center p-5 pt-16 rounded-r-3xl z-50 transition-all duration-300 ${
-            menu ? "left-0" : "-left-full"
+        className={`bg-secondary h-screen fixed w-[15%] p-5 pt-10 flex flex-col justify-between items-center rounded-r-3xl z-50 transition-all duration-300 ${
+          menu ? "left-0" : "-left-full"
         }`}
       >
         {/* Menu Sidebar */}
@@ -56,4 +53,4 @@ return (
   );
 }
 
-export default Sidebar
+export default Sidebar;

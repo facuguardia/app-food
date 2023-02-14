@@ -103,7 +103,7 @@ function Login() {
         </div>
         {/* Botones de inicio de sesión */}
         <div className="flex items-center justify-between">
-          <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded">
             Ingresar
           </button>
           {/* Enlace para restablecer contraseña */}
