@@ -78,7 +78,7 @@ function Register() {
           />
         </div>
         {/* Boton de registro */}
-        <button className="bg-secondary hover:bg-secondary/50 text-gray-700 font-medium text-sm py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded">
           Registrate
         </button>
       </form>

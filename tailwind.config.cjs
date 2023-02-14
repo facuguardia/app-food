@@ -9,7 +9,7 @@ module.exports = {
         secondary: "#ec7c6a",
       },
       backgroundImage: {
-        "img-background": "url('/src/assets/bg-landing.jpg')",
+        "img-background": "url('/src/assets/bg-landing.png')",
       },
       spacing: {
         "90%": "65%",

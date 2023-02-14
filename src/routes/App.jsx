@@ -8,6 +8,7 @@ import ProtectedRoute from "../ProtectedRoute";
 import Register from "../page/Register";
 import LandingPage from "../page/LandingPage";
 import Order from "../page/Order";
+import NotFound from "../page/NotFound";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
@@ -32,6 +33,7 @@ function App() {
               }
             />
             <Route path="/order" element={<Order />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
       </CartProvider>
