@@ -10,6 +10,7 @@ import LandingPage from "../page/LandingPage";
 import Order from "../page/Order";
 import NotFound from "../page/NotFound";
 import Layout from "../container/Layout";
+import Offers from "../page/Offers";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
@@ -36,6 +37,7 @@ function App() {
               }
             />
             <Route path="/order" element={<Order />} />
+            <Route path="/offers" element={<Offers />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           </Layout>
