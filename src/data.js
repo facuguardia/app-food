@@ -19,6 +19,7 @@ export const food = [
     image: simple,
     price: "$ 499",
     description: "Carne, queso, lechuga, tomate y cebolla",
+    isOffer:true,
   },
   {
     id: 3,
@@ -35,6 +36,8 @@ export const food = [
     image: cheddarybacon,
     price: "$ 999",
     description: "Doble carne, queso cheddar, lechuga, tomate y salsa barbacoa",
+    isOffer:true
+
   },
   {
     category: "Pizzas",
@@ -59,6 +62,7 @@ export const food = [
     price: "$ 399",
     description: "Muzaarella, tomate, pimienta negra, salame y rallado de albaca",
     id: 8,
+    isOffer:true
 },
 {
     category: "Empanadas",

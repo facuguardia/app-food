@@ -34,7 +34,7 @@ function Sidebar({ handleMenu, menu }) {
             <CgProfile />
           </Link>
           {/* Item */}
-          <Link to="#">
+          <Link to="/offers">
             <MdOutlineLocalOffer />
           </Link>
           {/* Item */}
