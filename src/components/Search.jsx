@@ -1,59 +1,41 @@
-import React, { useState } from "react";
-// Iconos
-import { BsSearch } from "react-icons/bs";
+// import React, { useState } from "react";
+// // Iconos
+// // import { BsSearch } from "react-icons/bs";
 
-function Search() {
-  // const [ comidas, setComidas ] = useState([]);
-  const [search, setSearch] = useState({
-    valor: "",
-  });
+// // import Cards from "../container/Cards";
 
-  const handleSearch = (event) => {
-    const value = event.target.value;
-    setSearch({
-      valor: value,
-    });
-    /* aca invoco la funcion pasandole el estado buscador */
-  };
+// function Search({ food }) {
+//   // const [searchTerm, setSearchTerm] = useState("");
 
-  // const peticionGet=async()=>{
-  //     await axios.get("https://jsonplaceholder.typicode.com/users")
-  //     .then(response=>{
-  //       setUsuarios(response.data);
-  //       setTablaUsuarios(response.data);
-  //     }).catch(error=>{
-  //       console.log(error);
-  //     })
-  //   }
+//   // const handleChange = (event) => {
+//   //   setSearchTerm(event.target.value);
+//   // };
 
-  /* primero un estado con false o true
-tendria un funcion que compara el value del imput con la categoria (con el icludes)
-"" no renderiza la card , si cambia si lo renderiza */
+//   // const results = !searchTerm
+//   //   ? food
+//   //   : food.filter(
+//   //       (item) =>
+//   //         item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+//   //         item.description.toLowerCase().includes(searchTerm.toLowerCase())
+//   //     );
 
-  // const filtrar=(terminoBusqueda)=>{
-  //     var resultadosBusqueda=tablaUsuarios.filter((elemento)=>{
-  //       if( elemento.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-  //         || elemento.company.name.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())
-  //       ) {
-  //         return elemento;
-  //         }
-  //     });
-  //     setUsuarios(resultadosBusqueda);
-  //   }
 
-  return (
-    // Contenedor de la barra de busqueda
-    <div className="w-full relative mt-2 ml-8">
-      {/* Icono de busqueda*/}
-      <BsSearch className="absolute left-4 top-8 -translate-y-1/2" />
-      {/* Input de busqueda */}
-      <input
-        className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-10 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
-        value={search.valor}
-        onChange={handleSearch}
-      ></input>
-    </div>
-  );
-}
 
-export default Search;
+//   return (
+//     // Contenedor de la barra de busqueda
+//     <div className="w-full relative mt-2 ml-8">
+//       {/* Icono de busqueda*/}
+//       <BsSearch className="absolute left-4 top-8 -translate-y-1/2" />
+//       {/* Input de busqueda */}
+//       <input
+//         className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-12 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+//         value={searchTerm}
+//         onChange={handleChange}
+//       />
+//       {/* necesito que al ingresar la palabra muestre la card correspondiente */}
+     
+//     </div>
+//   );
+// }
+
+// export default Search;

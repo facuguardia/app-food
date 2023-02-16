@@ -18,7 +18,7 @@ const Order = () => {
       <Sidebar handleMenu={handleMenu} menu={menu} />
       {/* Contenedor de Orden */}
       <div
-        className="grid grid-cols-1 w-full p-5"
+        className="grid grid-cols-1 w-full min-h-screen p-5"
         onClick={() => {
           if (menu) {
             handleMenu();
