@@ -1,13 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // Componentes
 import Categorias from "../components/Categorias";
-import Search from "../components/Search";
 import Cards from "../container/Cards";
-import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 // Iconos
 import { BsCart3 } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 // Plantilla card
 import { food } from "../data";
 // Contexto
@@ -37,22 +36,43 @@ import { CartContext } from "../context/CartContext";
 function Home() {
   // Estado del sidebar
   const [menu, setMenu] = useState(false);
-  //manejador del estado de sidebar
+  // Estado del buscador
+  const [searchTerm, setSearchTerm] = useState("");
+  // Estado del filtro de cartas
+  const [searchResults, setSearchResults] = useState([]);
+  // Estado del carrito
+  const [cart, setCart] = useContext(CartContext);
+
+  // Manejador del evento de sidebar
   const handleMenu = () => {
     setMenu(!menu);
   };
+
+  // Manejador del evento del buscador
+  const handleChange = (event) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    const results = food.filter(
+      (item) =>
+        item.name.toLowerCase().includes(term.toLowerCase()) ||
+        item.category.toLowerCase().includes(term.toLowerCase())
+    );
+    setSearchResults(results);
+  };
+
   // Contador del carrito
-  const [cart, setCart] = useContext(CartContext);
   const quantity = cart.reduce((acc, curr) => {
     return acc + curr.quantity;
   }, 0);
 
   return (
     <>
+      {/* Sidebar */}
+      <Sidebar menu={menu} handleMenu={handleMenu} />
       {/* boton Carrito */}
       <Link
         to="/order"
-        className="fixed right-3 bottom-4 text-3xl bg-black/20 p-3 rounded-full text-white z-50"
+        className="fixed right-3 bottom-16 text-3xl bg-black/50 p-3 rounded-full text-white z-50"
       >
         <BsCart3 />{" "}
         {quantity > 0 ? (
@@ -62,22 +82,29 @@ function Home() {
         ) : null}
       </Link>
       <div
-        className="bg-gradient-to-b  from-background to-[#24282E] w-screen min-h-screen overflow-x-hidden p-2"
+        className="w-screen h-screen overflow-x-hidden p-2"
         onClick={() => {
           if (menu) {
             handleMenu();
           }
         }}
       >
-        <Search />
-
+        {/* Contenedor de la barra de busqueda */}
+        <div className="w-full relative mt-2 ml-8">
+          {/* Icono de busqueda*/}
+          <BsSearch className="absolute left-4 top-8 -translate-y-1/2" />
+          {/* Input de busqueda */}
+          <input
+            className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-12 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+            value={searchTerm}
+            onChange={handleChange}
+          />
+        </div>
         <Categorias />
 
-        <Cards food={food} />
-
-        <Footer />
+        {/* Cards */}
+        <Cards food={searchTerm.length < 1 ? food : searchResults} />
       </div>
-      <Sidebar handleMenu={handleMenu} menu={menu} />
     </>
   );
 }

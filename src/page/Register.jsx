@@ -37,7 +37,7 @@ function Register() {
 
   return (
     // Contenedor del formulario
-    <div className="w-full max-w-xs m-auto">
+    <div className="w-full max-w-xs m-auto min-h-screen flex flex-col justify-center">
       {error && <Alert message={error} />}
       {/* Formulario de registro */}
       <form
