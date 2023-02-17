@@ -2,11 +2,7 @@ import React, { useContext } from "react";
 import { MdDelete } from "react-icons/md";
 import { CartContext } from "../context/CartContext";
 
-function OrderItem(props) {
-
-  console.log(props);
-
-  const { item, image, name } = props;
+function OrderItem({item}) {
 
   const [cart, setCart] = useContext(CartContext);
 
@@ -19,8 +15,8 @@ function OrderItem(props) {
     <>
       <div className="flex flex-col gap-8">
         <div className="flex flex-row justify-between gap-4 items-center pl-2">
-          <img src={image} className="w-10" />
-          <span className="text-sm font-semibold">{name}</span>
+          <img src={item.image} className="w-10" />
+          <span className="text-sm font-semibold">{item.name}</span>
           <div className="flex gap-2 rounded-full bg-primary py-1 px-4">
             <button className="text-sm font-semibold">-</button>
             <span className="text-sm font-semibold">{item.quantity}</span>

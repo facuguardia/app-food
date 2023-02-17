@@ -12,27 +12,6 @@ import { food } from "../data";
 // Contexto
 import { CartContext } from "../context/CartContext";
 
-// const [home, setHome] = useState({
-//     Cards: [],
-//     Categorias: [],
-//     All: [],
-// })
-
-// const  handleCategorias = (event) => {
-//     const category = event.target.value;
-//     setHome({
-//         ...home,
-//         Cards : home.allCard.filter(Card => Card.category === category)
-
-//     })
-
-// }
-// const  handleAll = () =>{
-//   setHome({
-//     Cards : home.allCards
-//   })
-// }
-
 function Home() {
   // Estado del sidebar
   const [menu, setMenu] = useState(false);
@@ -59,22 +38,6 @@ function Home() {
     );
     setSearchResults(results);
   };
-
-  // function handleAddToCart(item) {
-  //   setCart((prevCart) => {
-  //     const itemIndex = prevCart.findIndex((cartItem) => cartItem.id === item.id);
-  //     if (itemIndex >= 0) {
-  //       // Si el item ya está en el carrito, actualiza la cantidad
-  //       const updatedCart = [...prevCart];
-  //       updatedCart[itemIndex].quantity += item.quantity;
-  //       return updatedCart;
-  //     } else {
-  //       // Si el item no está en el carrito, añade el item con sus propiedades
-  //       const updatedCart = [...prevCart, { ...item, image: item.image, name: item.name }];
-  //       return updatedCart;
-  //     }
-  //   });
-  // }
 
   // Contador del carrito
   const quantity = cart.reduce((acc, curr) => {

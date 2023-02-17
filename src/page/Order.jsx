@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import OrderItem from "../components/OrderItem";
 import Sidebar from "../components/Sidebar";
 import { CartContext } from "../context/CartContext";
@@ -12,6 +13,16 @@ const Order = () => {
   };
 
   const [cart, setCart] = useContext(CartContext);
+
+  const sumarTotal = () => {
+    let total = "";
+    cart.forEach((item) => {
+      total += item.price;
+    });
+    return total;
+  };
+
+console.log(sumarTotal());
 
   return (
     <>
@@ -45,12 +56,13 @@ const Order = () => {
           {/* Total a pagar */}
           <div className="pb-8 flex justify-end items-center gap-4">
             <span className="text-2xl font-bold">Total a pagar</span>
-            <span className="text-2xl font-bold"> $ 1000
-            </span>
+            <span className="text-2xl font-bold"> {sumarTotal()}</span>
           </div>
           {/* Boton pagar */}
           <div className=" bg-secondary flex justify-center items-center rounded-full py-2 px-4">
+            <Link to="/payment">
             <button className="text-2xl font-bold text-white">Pagar</button>
+            </Link>
           </div>
         </div>
       </div>

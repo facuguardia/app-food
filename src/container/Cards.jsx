@@ -1,7 +1,7 @@
 // Componentes
 import Card from "../components/Card";
 
-function Cards({ food, handleAddToCart}) {
+function Cards({ food }) {
   return (
     // Contenedor de las cards
     <div className="p-8 grid grid-cols-1 gap-16 mt-10">
