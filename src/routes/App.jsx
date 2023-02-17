@@ -11,6 +11,7 @@ import Order from "../page/Order";
 import NotFound from "../page/NotFound";
 import Offers from "../page/Offers";
 import Payment from "../page/Payment";
+import Profile from "../page/Profile";
 
 // Aca importamos el layout
 import Layout from "../container/Layout";
@@ -39,6 +40,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route path="/profile" element={<Profile />} />
               <Route path="/order" element={<Order />} />
               <Route path="/offers" element={<Offers />} />
               <Route path="/payment" element={<Payment />} />

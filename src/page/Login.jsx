@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // Iconos
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
 // Componentes
 import Alert from "../Alert";
 // Contexto
@@ -124,9 +124,6 @@ function Login() {
       <div className="flex justify-end items-center gap-4 pt-5 pr-3">
         <button onClick={handleGoogleSignin} className="">
           <FaGoogle className="text-3xl shadow-md" />
-        </button>
-        <button onClick={handleGoogleSignin} className="">
-          <FaFacebook className="text-3xl shadow-md" />
         </button>
       </div>
     </div>
