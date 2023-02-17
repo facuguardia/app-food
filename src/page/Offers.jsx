@@ -6,7 +6,6 @@ import Cards from '../container/Cards';
 import { BsCart3 } from 'react-icons/bs';
 import { CartContext } from '../context/CartContext';
 import Sidebar from '../components/Sidebar';
-import { MdOutlineLocalOffer } from 'react-icons/md';
 
 const Offers = () => {
 
@@ -56,15 +55,16 @@ const Offers = () => {
         ) : null}
         </Link>
         <div
-            className="w-screen h-screen overflow-x-hidden p-2"
+            className="w-screen h-screen overflow-x-hidden"
             onClick={() => {
             if (menu) {
             handleMenu();
           }
         }}
         >
-        <h1 className='text-center font-bold flex align-middle justify-center underline underline-offset-8'>OFERTAS <MdOutlineLocalOffer /></h1>
-
+        <div className='w-full h-7 rounded-lg bg-primary fixed mb-16'>
+        <h1 className='text-center text-white font-bold text-lg flex align-middle justify-center'>OFERTAS</h1>
+        </div>
         {/* Se renderiza el componente Cards pero la propiedad food son solo las cards que tienen oferta */}
         <Cards food={offerCards} />
         </div>
