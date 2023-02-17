@@ -1,12 +1,12 @@
 // Componentes
 import Card from "../components/Card";
 
-function Cards({ food}) {
+function Cards({ food, handleAddToCart}) {
   return (
     // Contenedor de las cards
     <div className="p-8 grid grid-cols-1 gap-16 mt-10">
       {/* Mapeo de las cards */}
-      {food.map(({ image, name, price, stock, addToBuy, description, id }) => {
+      {food.map(({ image, name, price, stock, description, id }) => {
         return (
           // Pasamos los props a la card
           <Card

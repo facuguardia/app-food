@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 // Componentes
 import Categorias from "../components/Categorias";
@@ -59,6 +59,22 @@ function Home() {
     );
     setSearchResults(results);
   };
+
+  // function handleAddToCart(item) {
+  //   setCart((prevCart) => {
+  //     const itemIndex = prevCart.findIndex((cartItem) => cartItem.id === item.id);
+  //     if (itemIndex >= 0) {
+  //       // Si el item ya está en el carrito, actualiza la cantidad
+  //       const updatedCart = [...prevCart];
+  //       updatedCart[itemIndex].quantity += item.quantity;
+  //       return updatedCart;
+  //     } else {
+  //       // Si el item no está en el carrito, añade el item con sus propiedades
+  //       const updatedCart = [...prevCart, { ...item, image: item.image, name: item.name }];
+  //       return updatedCart;
+  //     }
+  //   });
+  // }
 
   // Contador del carrito
   const quantity = cart.reduce((acc, curr) => {
