@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 // Componentes
 import Categorias from "../components/Categorias";
@@ -11,27 +11,6 @@ import { BsSearch } from "react-icons/bs";
 import { food } from "../data";
 // Contexto
 import { CartContext } from "../context/CartContext";
-
-// const [home, setHome] = useState({
-//     Cards: [],
-//     Categorias: [],
-//     All: [],
-// })
-
-// const  handleCategorias = (event) => {
-//     const category = event.target.value;
-//     setHome({
-//         ...home,
-//         Cards : home.allCard.filter(Card => Card.category === category)
-
-//     })
-
-// }
-// const  handleAll = () =>{
-//   setHome({
-//     Cards : home.allCards
-//   })
-// }
 
 function Home() {
   // Estado del sidebar

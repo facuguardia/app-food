@@ -9,8 +9,11 @@ import Register from "../page/Register";
 import LandingPage from "../page/LandingPage";
 import Order from "../page/Order";
 import NotFound from "../page/NotFound";
-import Layout from "../container/Layout";
 import Offers from "../page/Offers";
+import Payment from "../page/Payment";
+
+// Aca importamos el layout
+import Layout from "../container/Layout";
 
 // Aca importamos el context
 import { AuthProvider } from "../context/AuthContext";
@@ -22,24 +25,25 @@ function App() {
       <CartProvider>
         <AuthProvider>
           <Layout>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
 
-            <Route
-              exact
-              path="/home"
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/order" element={<Order />} />
-            <Route path="/offers" element={<Offers />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route
+                exact
+                path="/home"
+                element={
+                  <ProtectedRoute>
+                    <Home />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/order" element={<Order />} />
+              <Route path="/offers" element={<Offers />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </Layout>
         </AuthProvider>
       </CartProvider>

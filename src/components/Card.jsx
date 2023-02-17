@@ -18,7 +18,7 @@ function Card({ name, image, price, description, id }) {
           }
         });
       } else {
-        return [...currCard, { id, quantity: 1, price }];
+        return [...currCard, { id, quantity: 1, price, name, image }];
       }
     });
   };
