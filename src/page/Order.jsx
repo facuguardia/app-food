@@ -60,7 +60,7 @@ console.log(sumarTotal());
           </div>
           {/* Boton pagar */}
           <div className=" bg-secondary flex justify-center items-center rounded-full py-2 px-4">
-            <Link to="/payment">
+            <Link to="/profile">
             <button className="text-2xl font-bold text-white">Pagar</button>
             </Link>
           </div>

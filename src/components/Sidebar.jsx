@@ -30,7 +30,7 @@ function Sidebar({ handleMenu, menu }) {
             <RiHome3Line />
           </Link>
           {/* Item */}
-          <Link to="#">
+          <Link to="/profile">
             <CgProfile />
           </Link>
           {/* Item */}
