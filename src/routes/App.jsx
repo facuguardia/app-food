@@ -22,7 +22,7 @@ import { CartProvider } from "../context/CartContext";
 
 function App() {
   return (
-    <div className="bg-img-background bg-center bg-cover h-screen w-full text-gray-300">
+    <div className="bg-img-background bg-center bg-cover text-gray-300">
       <CartProvider>
         <AuthProvider>
           <Layout>
