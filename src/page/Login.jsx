@@ -59,6 +59,7 @@ function Login() {
       setError(error.message);
     }
   };
+  
   return (
     // Contenedor principal
     <div className="w-full max-w-xs m-auto min-h-screen flex flex-col justify-center">
