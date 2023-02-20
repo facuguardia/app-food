@@ -14,15 +14,12 @@ const Order = () => {
 
   const [cart, setCart] = useContext(CartContext);
 
-  const sumarTotal = () => {
-    let total = "";
-    cart.forEach((item) => {
-      total += item.price;
-    });
-    return total;
-  };
+  const sumarTodo = cart.reduce((acc, item)=> {
+    return acc + item.quantity * item.price
+  },0)
+ 
 
-console.log(sumarTotal());
+
 
   return (
     <>
@@ -56,7 +53,7 @@ console.log(sumarTotal());
           {/* Total a pagar */}
           <div className="pb-8 flex justify-end items-center gap-4">
             <span className="text-2xl font-bold">Total a pagar</span>
-            <span className="text-2xl font-bold"> {sumarTotal()}</span>
+            <span className="text-2xl font-bold"> ${sumarTodo}</span>
           </div>
           {/* Boton pagar */}
           <div className=" bg-secondary flex justify-center items-center rounded-full py-2 px-4">

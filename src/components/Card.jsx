@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-function Card({ name, image, price, description, id }) {
+function Card({id,name,description,price,image}) {
   // Contador del carrito
   const [cart, setCart] = useContext(CartContext);
 
@@ -22,6 +22,7 @@ function Card({ name, image, price, description, id }) {
       }
     });
   };
+
 
   // Restar del carrito
   const removeCard = () => {
@@ -47,7 +48,14 @@ function Card({ name, image, price, description, id }) {
 
   const quantityPerCard = getQuantityById(id);
 
+  // const currPrice = cart.reduce((acc, curr)=> {
+  //    acc + curr.quantity * curr.price
+  // },0)
+  // console.log(currPrice)
+ 
+
   return (
+   
     // Contenedor de cada comida
     <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
       {/* Imagen de cada comida */}
@@ -60,7 +68,7 @@ function Card({ name, image, price, description, id }) {
       {quantityPerCard > 0 && <div>{quantityPerCard}</div>}
       {/* Datos de cada comida */}
       <h1 className="text-lg font-medium text-white">{name}</h1>
-      <h3 className="text-xl font-semibold text-secondary">{price}</h3>
+      <h3 className="text-xl font-semibold text-secondary">${price}</h3>
       <p className="text-sm">{description}</p>
 
       {/* Boton para sumar o restar del carrito */}
@@ -71,6 +79,7 @@ function Card({ name, image, price, description, id }) {
       )}
       {quantityPerCard > 0 && <button onClick={() => removeCard()}>-</button>}
     </div>
+   
   );
 }
 
