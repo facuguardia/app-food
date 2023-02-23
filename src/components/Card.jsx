@@ -79,7 +79,7 @@ quantity: 1
         })
       }
   }
-console.log(fav);
+
   return (
     // Contenedor de cada comida
     <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
