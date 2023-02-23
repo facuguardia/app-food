@@ -63,24 +63,23 @@ quantity: 1
   // Alternar el true or false del estado
   const [isFav, setIsFav] = useState(false)
 
-  useEffect(()=>{
-    setAll(()=>{
-      
-    })
 
-  },[])
 
   const handleFavorite = () =>{
       if(isFav){
         setIsFav(false)
-        
       }else{
         setIsFav(true)
+        setFav((curr)=>{
+          if(curr){
+            return curr?.map((card)=>{
+              return {...card, card}
+            })
+          }
+        })
       }
   }
-
-  // let fave = true
-
+console.log(fav);
   return (
     // Contenedor de cada comida
     <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
