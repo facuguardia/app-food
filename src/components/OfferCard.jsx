@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import { food } from "../data";
 
 function OfferCard({ name, image, price, description, id, discount, isOffer }) {
   // Contador del carrito
@@ -51,7 +50,7 @@ function OfferCard({ name, image, price, description, id, discount, isOffer }) {
   // Calculador de descuento
 
   const getDiscountedPrice = (price, discount) => {
-    const price1 = parseFloat(price.replace("$ ", ""));
+    const price1 = parseFloat(price);
     const discountedPrice = price1 - price1 * discount / 100;
     return "$ " + discountedPrice.toFixed(2);
   };
