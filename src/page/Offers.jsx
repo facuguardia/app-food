@@ -2,7 +2,7 @@ import React from 'react'
 import { food } from '../data';
 import { useState,useEffect,useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Cards from '../container/Cards';
+import OfferCards from '../container/OfferCards';
 import { BsCart3 } from 'react-icons/bs';
 import { CartContext } from '../context/CartContext';
 import Sidebar from '../components/Sidebar';
@@ -62,11 +62,11 @@ const Offers = () => {
           }
         }}
         >
-        <div className='w-full h-7 rounded-lg bg-primary fixed mb-16'>
-        <h1 className='text-center text-white font-bold text-lg flex align-middle justify-center'>OFERTAS</h1>
+        <div className='w-full h-7  bg-primary fixed mb-16'>
+        <h1 className='text-center text-gray-200 font-bold text-lg flex align-middle justify-center'>DESCUENTOS</h1>
         </div>
         {/* Se renderiza el componente Cards pero la propiedad food son solo las cards que tienen oferta */}
-        <Cards food={offerCards} />
+        <OfferCards food={offerCards} />
         </div>
         </div>
       );
