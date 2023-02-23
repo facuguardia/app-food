@@ -1,5 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
+import { FavContext } from "../context/FavContext";
+import { useEffect } from "react";
 
 function Card({ name, image, price, description, id }) {
   // Contador del carrito
@@ -12,6 +14,7 @@ function Card({ name, image, price, description, id }) {
       if (isCardFound) {
         return currCard.map((card) => {
           if (card.id === id) {
+
             return { ...card, quantity: card.quantity + 1 };
           } else {
             return card;
@@ -22,6 +25,11 @@ function Card({ name, image, price, description, id }) {
       }
     });
   };
+
+/*
+quantity: 1
+
+*/
 
   // Restar del carrito
   const removeCard = () => {
@@ -47,15 +55,50 @@ function Card({ name, image, price, description, id }) {
 
   const quantityPerCard = getQuantityById(id);
 
+  // Para tener un Fav
+  const [fav, setFav] = useContext(FavContext)
+  // para tener todos los favs
+  const [all, setAll] = useContext(FavContext)
+
+  // Alternar el true or false del estado
+  const [isFav, setIsFav] = useState(false)
+
+  useEffect(()=>{
+    setAll(()=>{
+      
+    })
+
+  },[])
+
+  const handleFavorite = () =>{
+      if(isFav){
+        setIsFav(false)
+        
+      }else{
+        setIsFav(true)
+      }
+  }
+
+  // let fave = true
+
   return (
     // Contenedor de cada comida
     <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
       {/* Imagen de cada comida */}
-      <img
-        className="w-40 object-cover -mt-20 shadow-2xl "
-        src={image}
-        alt={name}
-      />
+      <div className="flex gap-4" >
+        <img
+          className="w-40 object-cover -mt-20 "
+          src={image}
+          alt={name}
+        />
+        {
+            isFav ? (
+                      <button onClick={handleFavorite} className='' >❤️</button>
+                      ) : (
+                      <button onClick={handleFavorite} className='' >🤍</button>
+                    )
+              }
+      </div>
       {/* Contador individual de cada comida */}
       {quantityPerCard > 0 && <div>{quantityPerCard}</div>}
       {/* Datos de cada comida */}
