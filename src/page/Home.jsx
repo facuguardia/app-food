@@ -11,8 +11,11 @@ import { BsSearch } from "react-icons/bs";
 import { food } from "../data";
 // Contexto
 import { CartContext } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 
 function Home() {
+  // Estado de carga
+  const { loading } = useAuth();
   // Estado del sidebar
   const [menu, setMenu] = useState(false);
   // Estado del buscador
@@ -21,6 +24,7 @@ function Home() {
   const [searchResults, setSearchResults] = useState([]);
   // Estado del carrito
   const [cart, setCart] = useContext(CartContext);
+  
 
   // Manejador del evento de sidebar
   const handleMenu = () => {
@@ -43,6 +47,9 @@ function Home() {
   const quantity = cart.reduce((acc, curr) => {
     return acc + curr.quantity;
   }, 0);
+
+  // Renderizado condicional
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>

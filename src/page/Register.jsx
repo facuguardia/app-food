@@ -56,7 +56,7 @@ function Register() {
             type="email"
             name="email"
             placeholder="correo@correo.com"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleChange}
           />
         </div>
@@ -73,12 +73,12 @@ function Register() {
             name="password"
             id="password"
             placeholder="********"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleChange}
           />
         </div>
         {/* Boton de registro */}
-        <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded">
+        <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded-full">
           Registrate
         </button>
       </form>

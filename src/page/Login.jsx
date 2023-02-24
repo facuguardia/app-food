@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // Iconos
-import { FaGoogle } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 // Componentes
 import Alert from "../Alert";
 // Contexto
@@ -59,6 +59,7 @@ function Login() {
       setError(error.message);
     }
   };
+  
   return (
     // Contenedor principal
     <div className="w-full max-w-xs m-auto min-h-screen flex flex-col justify-center">
@@ -80,7 +81,7 @@ function Login() {
             type="email"
             name="email"
             placeholder="correo@correo.com"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleChange}
           />
         </div>
@@ -97,13 +98,13 @@ function Login() {
             name="password"
             id="password"
             placeholder="********"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleChange}
           />
         </div>
         {/* Botones de inicio de sesión */}
         <div className="flex items-center justify-between">
-          <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded">
+          <button className="bg-secondary text-gray-700 font-semibold text-md py-2 px-4 rounded-full">
             Ingresar
           </button>
           {/* Enlace para restablecer contraseña */}
@@ -123,7 +124,7 @@ function Login() {
       {/* Botones de redes sociales */}
       <div className="flex justify-end items-center gap-4 pt-5 pr-3">
         <button onClick={handleGoogleSignin} className="">
-          <FaGoogle className="text-3xl shadow-md" />
+          <FcGoogle className="text-3xl shadow-md" />
         </button>
       </div>
     </div>
