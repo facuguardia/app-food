@@ -2,6 +2,8 @@ import { useContext } from "react";
 // Context
 import { CartContext } from "../context/CartContext";
 
+import {MdDelete} from 'react-icons/md'
+
 function OfferCard({ name, image, price, description, id, discount, isOffer }) {
   // Contador del carrito
   const [cart, setCart] = useContext(CartContext);
@@ -13,32 +15,36 @@ function OfferCard({ name, image, price, description, id, discount, isOffer }) {
       if (isCardFound) {
         return currCard.map((card) => {
           if (card.id === id) {
-            return { ...card, quantity: card.quantity + 1, name, image, price };
+            return { ...card, quantity: card.quantity + 1, name: card.name, image: card.image, price: card.price };
           } else {
             return card;
           }
         });
       } else {
-        return [...currCard, { id, quantity: 1, price }];
+        return [...currCard, { id, quantity: 1, price, name, image }];
       }
     });
   };
 
   // Restar del carrito
-  const removeCard = () => {
-    setCart((currCard) => {
-      if (currCard.find((card) => card.id === id)?.quantity === 1) {
-        return currCard.filter((card) => card.id !== id);
-      } else {
-        return currCard.map((card) => {
-          if (card.id === id) {
-            return { ...card, quantity: card.quantity - 1 };
-          } else {
-            return card;
-          }
-        });
-      }
-    });
+  // const removeCard = () => {
+  //   setCart((currCard) => {
+  //     if (currCard.find((card) => card.id === id)?.quantity === 1) {
+  //       return currCard.filter((card) => card.id !== id);
+  //     } else {
+  //       return currCard.map((card) => {
+  //         if (card.id === id) {
+  //           return { ...card, quantity: card.quantity - 1 };
+  //         } else {
+  //           return card;
+  //         }
+  //       });
+  //     }
+  //   });
+  // };
+  const handleDelete = (id) => {
+    const newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
   };
 
   //  Contador individual del producto(va a servir para la pagina orden)
@@ -76,18 +82,18 @@ function OfferCard({ name, image, price, description, id, discount, isOffer }) {
         </div>
       </div>
       {/* Contador individual de cada comida */}
-      {quantityPerCard > 0 && <div>{quantityPerCard}</div>}
+      {/* {quantityPerCard > 0 && <div>{quantityPerCard}</div>} */}
       {/* Datos de cada comida */}
       <h1 className="text-lg font-medium text-white">{name}</h1>
       <p className="text-sm">{description}</p>
 
       {/* Boton para sumar o restar del carrito */}
       {quantityPerCard === 0 ? (
-        <button onClick={() => addToCart()}>+</button>
+        <button onClick={() => addToCart()} className='bg-secondary text-gray-300 rounded-full p-2'>Añadir al Carrito</button>
       ) : (
-        <button onClick={() => addToCart()}>+</button>
+        <button onClick={() => addToCart()} className='bg-secondary text-gray-300 rounded-full p-2'>Añadir al Carrito +</button>
       )}
-      {quantityPerCard > 0 && <button onClick={() => removeCard()}>-</button>}
+      {/* {quantityPerCard > 0 && <button onClick={() => handleDelete(id)} className='text-gray-300 hover:text-red-400'><MdDelete/></button>} */}
     </div>
   );
 }

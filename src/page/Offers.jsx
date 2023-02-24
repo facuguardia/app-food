@@ -40,6 +40,7 @@ const Offers = () => {
 
   //Render de las ofertas.
   return (
+    <>
     <div className="relative bottom-12">
       {/* Sidebar */}
       <div
@@ -69,6 +70,7 @@ const Offers = () => {
         <OfferCards food={offerCards} />
       </div>
     </div>
+    </>
   );
 };
 
