@@ -58,7 +58,7 @@ function Home() {
       {/* boton Carrito */}
       <Link
         to="/order"
-        className="fixed right-3 bottom-16 text-3xl bg-black/50 p-3 rounded-full text-white z-50"
+        className="fixed right-3 bottom-12 text-3xl bg-black/50 p-3 rounded-full text-white z-50"
       >
         <BsCart3 />{" "}
         {quantity > 0 ? (
