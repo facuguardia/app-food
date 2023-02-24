@@ -12,7 +12,7 @@ function OfferCard({ name, image, price, description, id, discount, isOffer }) {
       if (isCardFound) {
         return currCard.map((card) => {
           if (card.id === id) {
-            return { ...card, quantity: card.quantity + 1 };
+            return { ...card, quantity: card.quantity + 1, name, image, price };
           } else {
             return card;
           }
