@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 // Componentes
-import Categorias from "../components/Categorias";
+import Category from "../components/Category";
 import Cards from "../container/Cards";
 import Sidebar from "../components/Sidebar";
 // Iconos
@@ -24,7 +24,6 @@ function Home() {
   const [searchResults, setSearchResults] = useState([]);
   // Estado del carrito
   const [cart, setCart] = useContext(CartContext);
-  
 
   // Manejador del evento de sidebar
   const handleMenu = () => {
@@ -86,7 +85,11 @@ function Home() {
             onChange={handleChange}
           />
         </div>
-        <Categorias />
+        <Category
+          food={food}
+          setSearchResults={setSearchResults}
+          setSearchTerm={setSearchTerm}
+        />
 
         {/* Cards */}
         <Cards food={searchTerm.length < 1 ? food : searchResults} />
