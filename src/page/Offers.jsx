@@ -41,7 +41,7 @@ const Offers = () => {
   //Render de las ofertas.
   return (
     <>
-    <div className="relative bottom-12">
+    <div className="">
       {/* Sidebar */}
       <div
         className="w-full h-screen overflow-x-hidden"
