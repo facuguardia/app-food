@@ -56,9 +56,7 @@ quantity: 1
   const quantityPerCard = getQuantityById(id);
 
   // Para tener un Fav
-  const [fav, setFav] = useContext(FavContext)
-  // para tener todos los favs
-  const [all, setAll] = useContext(FavContext)
+  const [favs, setFavs] = useContext(FavContext)
 
   // Alternar el true or false del estado
   const [isFav, setIsFav] = useState(false)
@@ -70,13 +68,6 @@ quantity: 1
         setIsFav(false)
       }else{
         setIsFav(true)
-        setFav((curr)=>{
-          if(curr){
-            return curr?.map((card)=>{
-              return {...card, card}
-            })
-          }
-        })
       }
   }
 

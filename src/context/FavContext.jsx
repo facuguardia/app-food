@@ -1,11 +1,10 @@
 import { useState ,createContext } from "react";
 
-export const FavContext = createContext(null)
+export const FavContext = createContext({})
 
 export const FavProvider = ({children}) => {
 
-    const [fav, setFav] = useState([])
-    const [all, setAll] = useState([])
+    const [favs, setFavs] = useState([])
 
-    return <FavContext.Provider value={[fav, setFav, all, setAll]}> {children} </FavContext.Provider>
+    return <FavContext.Provider value={[favs, setFavs]}> {children} </FavContext.Provider>
 }
