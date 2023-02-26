@@ -10,11 +10,13 @@ function Card({ name, image, price, description, id }) {
   // Sumar al carrito
   const addToCart = () => {
     setCart((currCard) => {
+      
       const isCardFound = currCard.find((card) => card.id === id);
       if (isCardFound) {
         return currCard.map((card) => {
           if (card.id === id) {
-
+            
+            // console.log(currCard);
             return { ...card, quantity: card.quantity + 1 };
           } else {
             return card;
@@ -61,17 +63,30 @@ quantity: 1
   // Alternar el true or false del estado
   const [isFav, setIsFav] = useState(false)
 
-
-
   const handleFavorite = () =>{
       if(isFav){
         setIsFav(false)
+        setFavs((currCard)=>{
+          const isCardFounded = currCard?.find((card) => card.id === id)
+          if (isCardFounded){
+            return currCard?.map((card) =>{
+              if(card.id === id){
+                return {...card, fav: id}
+              } else{
+                return card
+              }
+            })
+          } else {
+            return [...currCard, {id}]
+          }
+        })
       }else{
         setIsFav(true)
+        
       }
-  }
-
-  return (
+    }
+console.log(favs);
+      return (
     // Contenedor de cada comida
     <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
       {/* Imagen de cada comida */}
