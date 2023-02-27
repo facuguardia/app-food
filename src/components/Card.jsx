@@ -83,7 +83,9 @@ quantity: 1
     })
   }
 
-  const delFavorite = (id) =>{
+  const delFavorite = () =>{
+    const delcard = favs.filter((item) => item.id !== id)
+    setFavs(delcard)
   }
 
   const handleFavorite = () =>{
@@ -129,7 +131,7 @@ console.log(favs);
       )}
       {quantityPerCard > 0 && <button onClick={() => removeCard()}>-</button>}
       
-      { favs.map((item, index) => <Sidebar key={index} item={item} />) }
+      {/* { favs.map((item, index) => <Sidebar key={index} item={item} />) } */}
     </div>
   );
 }
