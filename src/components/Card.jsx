@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { FavContext } from "../context/FavContext";
 import { useEffect } from "react";
+import Sidebar from "./Sidebar";
 
 function Card({ name, image, price, description, id }) {
   // Contador del carrito
@@ -60,6 +61,8 @@ quantity: 1
   // Para tener un Fav
   const [favs, setFavs] = useContext(FavContext)
 
+    
+
   // Alternar el true or false del estado
   const [isFav, setIsFav] = useState(false)
 
@@ -80,19 +83,13 @@ quantity: 1
     })
   }
 
-  // const delFavorite = () =>{
-  //   setFavs((currCard) =>{
-  //     if (currCard?.find((card) => card.id === id)){
-  //       return currCard?.filter((card) => card.id !== id)
-  //     }
-  //     console.log(currCard)
-  //   })
-  // }
+  const delFavorite = (id) =>{
+  }
 
   const handleFavorite = () =>{
       if(isFav){
         setIsFav(false)
-        // delFavorite()
+        delFavorite()
       }else{
         setIsFav(true)
         addFavorite()
@@ -131,6 +128,8 @@ console.log(favs);
         <button onClick={() => addToCart()}>+</button>
       )}
       {quantityPerCard > 0 && <button onClick={() => removeCard()}>-</button>}
+      
+      { favs.map((item, index) => <Sidebar key={index} item={item} />) }
     </div>
   );
 }
