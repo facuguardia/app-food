@@ -63,26 +63,34 @@ quantity: 1
   // Alternar el true or false del estado
   const [isFav, setIsFav] = useState(false)
 
+  const addFavorite = () =>{
+    setFavs((currCard)=>{
+      const isCardFounded = currCard?.find((card) => card.id === id)
+      if (isCardFounded){
+        return currCard?.map((card) =>{
+          if(card.id === id){
+            return {...card, name:card.name,  }
+          } else{
+            return card
+          }
+        })
+      } else {
+        return [...currCard, {id}]
+      }
+    })
+  }
+
+  const delFavorite = () =>{
+
+  }
+
   const handleFavorite = () =>{
       if(isFav){
         setIsFav(false)
-        setFavs((currCard)=>{
-          const isCardFounded = currCard?.find((card) => card.id === id)
-          if (isCardFounded){
-            return currCard?.map((card) =>{
-              if(card.id === id){
-                return {...card, fav: id}
-              } else{
-                return card
-              }
-            })
-          } else {
-            return [...currCard, {id}]
-          }
-        })
+        delFavorite()
       }else{
         setIsFav(true)
-        
+        addFavorite()
       }
     }
 console.log(favs);
