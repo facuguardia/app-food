@@ -69,25 +69,30 @@ quantity: 1
       if (isCardFounded){
         return currCard?.map((card) =>{
           if(card.id === id){
-            return {...card, name:card.name,  }
+            return {...card, name: card.name, image: card.image, price: card.price}
           } else{
             return card
           }
         })
       } else {
-        return [...currCard, {id}]
+        return [...currCard, {name, id, price, image}]
       }
     })
   }
 
-  const delFavorite = () =>{
-
-  }
+  // const delFavorite = () =>{
+  //   setFavs((currCard) =>{
+  //     if (currCard?.find((card) => card.id === id)){
+  //       return currCard?.filter((card) => card.id !== id)
+  //     }
+  //     console.log(currCard)
+  //   })
+  // }
 
   const handleFavorite = () =>{
       if(isFav){
         setIsFav(false)
-        delFavorite()
+        // delFavorite()
       }else{
         setIsFav(true)
         addFavorite()
