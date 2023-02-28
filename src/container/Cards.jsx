@@ -4,7 +4,7 @@ import Card from "../components/Card";
 function Cards({ food }) {
   return (
     // Contenedor de las cards
-    <div className="p-8 grid grid-cols-1 gap-16 mt-10">
+    <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-16 mt-10">
       {/* Mapeo de las cards */}
       {food.map(({ image, name, price, stock, description, id }) => {
         return (

@@ -51,7 +51,7 @@ function Home() {
       {/* boton Carrito */}
       <Link
         to="/order"
-        className="fixed right-3 bottom-16 text-3xl bg-black/50 p-3 rounded-full text-white z-50"
+        className="fixed lg:hidden right-3 bottom-16 text-3xl bg-black/50 p-3 rounded-full text-white z-50"
       >
         <BsCart3 />{" "}
         {quantity > 0 ? (
@@ -60,8 +60,9 @@ function Home() {
           </span>
         ) : null}
       </Link>
+      {/* Contenedor de la pagina */}
       <div
-        className="w-screen h-screen overflow-x-hidden p-2"
+        className="lg:absolute lg:left-[50px] h-screen overflow-x-hidden p-2 pb-10 lg:pt-10"
         onClick={() => {
           if (menu) {
             handleMenu();
@@ -69,20 +70,24 @@ function Home() {
         }}
       >
         {/* Contenedor de la barra de busqueda */}
-        <div className="w-full relative mt-2 ml-8">
+        <div className="w-full lg:w-52 relative lg:absolute top-0 right-3 lg:right-[60px] mt-2 ml-8">
           {/* Icono de busqueda*/}
           <BsSearch className="absolute left-4 top-8 -translate-y-1/2" />
           {/* Input de busqueda */}
           <input
-            className="bg-primary w-[85%] items-center rounded-2xl py-2 pl-12 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
+            className="bg-primary w-[90%] lg:w-[250px] items-center rounded-2xl py-2 pl-12 pr-1 mt-3 shadow-md text-gray-300 text-lg focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-transparent"
             value={searchTerm}
             onChange={handleChange}
           />
         </div>
-        <Categorias />
+        <div className="">
+          <Categorias />
+        </div>
 
         {/* Cards */}
-        <Cards food={searchTerm.length < 1 ? food : searchResults} />
+        <div className="mt-10">
+          <Cards food={searchTerm.length < 1 ? food : searchResults} />
+        </div>
       </div>
     </>
   );
