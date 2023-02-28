@@ -13,13 +13,13 @@ function Sidebar({ handleMenu, menu }) {
       {/* Boton Sidebar */}
       <button
         onClick={handleMenu}
-        className={`absolute top-[422px] items-center shadow-md pt-3 pb-3 pr-.5 pl-0 rounded-r-3xl text-white text-3xl font-bold bg-secondary motion-safe:animate-pulse`}
+        className={`absolute top-[422px] lg:hidden items-center shadow-md pt-3 pb-3 pr-.5 pl-0 rounded-r-3xl text-white text-3xl font-bold bg-secondary motion-safe:animate-pulse`}
       >
         <BiChevronRight />
       </button>
       {/* Contenedor Sidebar */}
       <div
-        className={`bg-secondary h-screen fixed w-[15%] p-5 pt-10 flex flex-col justify-between items-center rounded-r-3xl z-50 transition-all duration-300 ${
+        className={`bg-secondary h-screen fixed w-[15%] lg:w-16 p-5 pt-10 flex flex-col justify-between items-center rounded-r-3xl z-50 transition-all duration-300 lg:left-0  lg:top-0 ${
           menu ? "left-0" : "-left-full"
         }`}
       >
