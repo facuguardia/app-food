@@ -69,7 +69,7 @@ const Favs = () => {
               {favs.length === 0 ? (
                 <p className="text-xl text-gray-300">No hay favoritos. Intenta agregando algunos</p>
               ) : (
-                <OfferCards food={favs} />
+                favs.map((item, index) => <FavCard key={index} item={item} />)
               )}
           </div>
         </div>

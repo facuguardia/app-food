@@ -98,21 +98,23 @@ quantity: 1
 
   return (
     // Contenedor de cada comida
-    <div className=" bg-primary flex flex-col items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
+    <div className=" bg-primary flex flex-col h-72 items-center gap-2 p-8 rounded-xl text-center text-gray-300 ">
       {/* Imagen de cada comida */}
-      <div className="flex gap-4" >
+      <div className="flex gap-4 justify-end w-max h-16 " >
         <img
-          className="w-40 object-cover -mt-20 "
+          className="w-48 object-cover -mt-20 "
           src={image}
           alt={name}
         />
-        {
+        <div className=" relative ">
+          {
             isFav ? (
-                      <button onClick={handleFavorite} className='' >❤️</button>
+                      <button onClick={handleFavorite} className='absolute left-4 bottom-14 '  >❤️</button>
                       ) : (
-                      <button onClick={handleFavorite} className='' >🤍</button>
+                      <button onClick={handleFavorite} className='absolute left-4 bottom-14 ' >🤍</button>
                     )
-              }
+          }
+        </div>
       </div>
       {/* Contador individual de cada comida */}
       {quantityPerCard > 0 && <div>{quantityPerCard}</div>}
