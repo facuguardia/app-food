@@ -38,7 +38,7 @@ function Sidebar({ handleMenu, menu }) {
             <MdOutlineLocalOffer />
           </Link>
           {/* Item */}
-          <Link to="#">
+          <Link to="/favs">
             <MdOutlineFavoriteBorder />
           </Link>
         </nav>

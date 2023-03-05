@@ -69,7 +69,7 @@ function OfferCard({ name, image, price, description, id, discount, isOffer }) {
     <div className="bg-primary flex flex-col items-center gap-3 p-4 rounded-xl text-center text-gray-300">
       {/* Imagen de cada comida y precio en descuento */}
       <div className="w-full flex flex-grow justify-evenly gap-3">
-        <img className="w-36 object-cover shadow-2xl " src={image} alt={name} />
+        <img className="w-36 object-cover" src={image} alt={name} />
         {/* Precio en descuento */}
         <div>
           <h3 className="text-2xl font-semibold text-gray-200">-{discount}%</h3>
